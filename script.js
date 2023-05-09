@@ -60,13 +60,13 @@ function getCringeVideo(object){
 }
 
 function getVideos(){   
-    var json = getJson("https://invidio.xamh.de/api/v1/search/?fields=videoId,viewCount,published,authorId&q=" + getLetter() + getLetter() + "&page=20&sort_by=view_count&date=today&duration=short&type=video&pretty=1"); 
+    var json = getJson("https://invidious.snopyta.org/api/v1/search/?fields=videoId,viewCount,published,authorId&q=" + getLetter() + getLetter() + "&page=20&sort_by=view_count&date=today&duration=short&type=video&pretty=1"); 
     
     //pokud je json prázdný
     var i = 1;
     setLoadingText("Generating random video (" + i + ". try)")
     while(Object.keys(json).length === 0){ 
-        json = getJson("https://invidio.xamh.de/api/v1/search/?fields=videoId,viewCount,published,authorId&q=" + getLetter() + getLetter() + "&page=10&sort_by=view_count&date=today&duration=short&type=video&pretty=1");
+        json = getJson("https://invidious.snopyta.org/api/v1/search/?fields=videoId,viewCount,published,authorId&q=" + getLetter() + getLetter() + "&page=10&sort_by=view_count&date=today&duration=short&type=video&pretty=1");
         setLoadingText("Generating random video (" + i + ". try)")
         i++;
     }
