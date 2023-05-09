@@ -6,7 +6,7 @@ function setElements(src, views, subs, date){
 }
 
 function getSubs(id){
-    var json = getJson("https://invidio.xamh.de/api/v1/channels/" + id + "?fields=subCount&pretty=1");
+    var json = getJson("https://invidious.snopyta.org/api/v1/channels/" + id + "?fields=subCount&pretty=1");
     if(json["subCount"] === 0)
         return "0 / hidden";
     return json["subCount"];
